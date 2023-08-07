@@ -1,1 +1,2 @@
-ls -la
+-rw-r--r-- 1 root root 0 Aug  7 10:25 ls-cwd_content
+-rw-r--r-- 1 root root 53 Aug  7 10:25 ls-cwd_content
