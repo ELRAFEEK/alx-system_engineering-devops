@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
+# when at 4th iteration replaces with a message 
+# and the same at the 8th iteration
 
 count=1
 while [ "$count" -le 10 ]; do

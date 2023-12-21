@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
+# and at 9th iteration a new string  saying Hi
 count=1
 while [ "$count" -le 10 ]; do
     echo "Best School"
