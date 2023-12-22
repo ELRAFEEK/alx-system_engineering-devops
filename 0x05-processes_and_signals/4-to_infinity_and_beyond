@@ -2,7 +2,7 @@
 # bash script to display "infinity and beyond"
 # indefinitely and in between each iteration of loop
 #  add a sleep 2
-while true 
+while true
 do
     echo "To infinity and beyond"
     sleep 2
