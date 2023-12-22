@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# using last three tasks and sigterm
+trap 'echo "I am invincible!!!"' SIGTERM
+while true
+do
+	echo "To infinity and beyond"
+done
