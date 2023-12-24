@@ -30,15 +30,15 @@ int main(void)
 		{
 			printf("Zombie process created, PID: %d\n", p);
 		}
-		else if ( p == 0)
+		else if (p == 0)
 		{
-			exit (0);
+			exit(0);
 		}
 		else
 		{
-			return 0;
+			return (0);
 		}
 	}
 	infinite_while();
-	return 0;
+	return (0);
 }
