@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# script that creates file containing it's pid and 
+# display a message indefinitely and other messages when
+# receiving sigterm signal and another one for sigint
+
+termquit() {
+    echo "I hate the kill command"
+    rm "/var/run/myscript.pid"
+    exit 0
+}
+
+nolove() {
+    echo "Y U no love me?!"
+    exit 0
+}
+
+trap 'termquit' SIGTERM
+
+trap 'nolove' SIGINT
+
+echo $$ > "/var/run/myscript.pid"
+
+while true
+do
+    echo "To infinity and beyond"
+done
