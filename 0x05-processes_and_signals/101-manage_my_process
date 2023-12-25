@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 # script that manages the manage my process file
+# ------->> start 
+# input path to script to start
+# creating a file containing process PID - display a Started message
+# -------->> stop
+# stop the process - deletes the file with the PID in it
+# displays a Stopped message
+# -------->> restart
+# stops the process - deletes the file with the PID in it
+# starts another process - creats a new file containing the PID
+# displays the message Restarted
 path_to="./manage_my_process"
 
 started() {
@@ -7,6 +17,7 @@ started() {
     echo $! > /var/run/my_process.pid # this means getting pid of the process running in background
     echo "manage_my_process started"
 }
+
 stopped() {
     # this line checks if file exist
     if [ -f "/var/run/my_process.pid" ]; then
@@ -17,6 +28,7 @@ stopped() {
     echo "manage_my_process stopped"
     fi
 }
+
 restarted() {
     # this line checks if file exist
     if [ -f "/var/run/my_process.pid" ]; then
