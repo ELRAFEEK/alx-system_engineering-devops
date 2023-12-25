@@ -3,17 +3,15 @@
 IFS=':'
 file='/etc/passwd'
 
-while read -r line;
+while IFS= read -r line;
 do
-    part=($line)
-
-    user=${part[0]} # username
-    psswd=${part[1]} #password
-    uid=${part[2]} #user id
-    grop=${part[3]} # group id
-    uinfo=${part[4]} # user information
-    hom=${part[5]} # home directory
-    CSH=${part[6]} # command/shell
+    user=$(echo "$line" | cut -d ':' -f1) # username
+    psswd=$(echo "$line" | cut -d ':' -f2) #password
+    uid=$(echo "$line" | cut -d ':' -f3) #user id
+    grop=$(echo "$line" | cut -d ':' -f3) # group id
+    uinfo=$(echo "$line" | cut -d ':' -f5) # user information
+    hom=$(echo "$line" | cut -d ':' -f6) # home directory
+    CSH=$(echo "$line" | cut -d ':' -f7) # command/shell
 
     echo "The user $user is part of the $grop gang, lives in $hom and rides $CSH. $uid's place is protected by the passcode $psswd, more info about the user here: $uinfo"
 
