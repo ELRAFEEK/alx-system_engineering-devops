@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# script that manages the manage my process file
+path_to="./manage_my_process"
+
+started() {
+    "$path_to" & # & means run in in back ground
+    echo $! > /var/run/my_process.pid # this means getting pid of the process running in background
+    echo "manage_my_process started"
+}
+stopped() {
+    # this line checks if file exist
+    if [ -f "/var/run/my_process.pid" ]; then
+    #this variable used to store pid of process in it
+    iD=$(cat /var/run/my_process.pid)
+    kill "$iD"
+    rm /var/run/my_process.pid
+    echo "manage_my_process stopped"
+    fi
+}
+restarted() {
+    # this line checks if file exist
+    if [ -f "/var/run/my_process.pid" ]; then
+    #this variable used to store pid of process in it
+        iD=$(cat /var/run/my_process.pid)
+        kill "$iD"
+        rm /var/run/my_process.pid
+    fi
+    $path_to &
+    echo $! > /var/run/my_process.pid
+    echo "manage_my_process restarted"
+}
+
+case "$1" in
+    start)
+        started
+        ;;
+    stop)
+        stopped
+        ;;
+    restart)
+        restarted
+        ;;
+    *)
+        echo "Usage: manage_my_process {start|stop|restart}"
+        ;;
+esac
