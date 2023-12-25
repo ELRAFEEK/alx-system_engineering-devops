@@ -7,7 +7,7 @@ do
     user=$(echo "$line" | cut -d ':' -f1)
     psswd=$(echo "$line" | cut -d ':' -f2)
     uid=$(echo "$line" | cut -d ':' -f3)
-    grop=$(echo "$line" | cut -d ':' -f3)
+    grop=$(echo "$line" | cut -d ':' -f4)
     uinfo=$(echo "$line" | cut -d ':' -f5)
     hom=$(echo "$line" | cut -d ':' -f6)
     CSH=$(echo "$line" | cut -d ':' -f7)
