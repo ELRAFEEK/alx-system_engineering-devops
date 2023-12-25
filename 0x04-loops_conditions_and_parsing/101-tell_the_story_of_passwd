@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # script to diplay contents of a file
-IFS=':'
 file='/etc/passwd'
 
 while IFS= read -r line;
