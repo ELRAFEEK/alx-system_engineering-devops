@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-ifconfig | grep 'inet' | awk '{print $2}' | awk 'NR==1 || NR==3'
