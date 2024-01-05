@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# takes ping as an argument and PING it
+# display a usage message if no argument passed
 p="$1"
 if [ $p ];
 then
