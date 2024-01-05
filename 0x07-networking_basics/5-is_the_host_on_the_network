@@ -2,9 +2,9 @@
 # takes ping as an argument and PING it
 # display a usage message if no argument passed
 p="$1"
-if [ $p ];
+if [ "$p" ];
 then
-    ping -c 5 $p
+    ping -c 5 "$p"
 else
 echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
 fi
