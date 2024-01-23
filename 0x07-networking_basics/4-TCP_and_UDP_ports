@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# only shows listening sockets , PID & program name socket belong to
-netstat -lp
