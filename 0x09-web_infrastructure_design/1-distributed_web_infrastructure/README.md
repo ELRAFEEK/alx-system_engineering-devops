@@ -6,7 +6,7 @@
 ### Load balancer:
 Enhancing the resilience and minimizing downtime during maintenance activities, such as deploying new code that requires restarting the web server.
 
-## What distribution algorithm your load balancer is configured with and how it works
+## What distribution algorithm your load balancer is configured with and how it works?
 ### Least Connection:
 This algorithm directs new requests to the server with the fewest active connections. It can help distribute load more evenly if there are fluctuations in traffic between the two servers.
 
