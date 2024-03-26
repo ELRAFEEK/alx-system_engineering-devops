@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ssh -F ~/.ssh/school -o PasswodAuthentication=no
+
