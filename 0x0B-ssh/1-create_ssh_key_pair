@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# create an RSA
+
+ssh-keygen -t rsa -b 4096 -f school
