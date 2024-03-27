@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# curling port 80 fixed
+sudo service apache2
+
