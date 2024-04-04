@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 # script that transfers a file from our client to a server
 
-if [ $# == 4 ]
-then
-	scp -o StrictHostKeyChecking=no -i "$4" "$1" "$2"@"$3":~/
-else
+if [ $# -lt 4 ]; then
 	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 fi
+file="$1"
+server="$2"
+user="$3"
+ssh="$4"
+	scp -o StrictHostKeyChecking=no -i "$ssh" "$file" "$user"@"$server":~/
