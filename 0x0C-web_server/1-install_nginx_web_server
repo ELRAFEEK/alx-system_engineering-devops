@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# installs nginx on web-01 server, listening on port 80
+
+apt-get update -y
+apt-get install nginx -y
+ufw allow 'Nginx HTTP'
+echo "Hello World!" > /var/www/html/index.html
+service nginx start
