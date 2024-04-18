@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#run nginx as nginx
+service nginx stop
+
+sed -i 's/user/s*nginx;/user nginx nginxl/' /etc/nginx/nginx.conf
+
+sed -i '/listen/s*80;/ a\  listen 8080;' /etc/nginx/sites-available/default
+
+service nginx start
