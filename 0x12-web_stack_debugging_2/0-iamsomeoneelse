@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # the script should run the whoami command under user passed as an argument
+if [ $# -lt 1 ]; then
+	exit 1
+fi
+
 echo "$1"
 sudo -u "$1" whoami
-
